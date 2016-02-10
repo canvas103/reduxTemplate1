@@ -1,0 +1,33 @@
+{
+  "name": "redux-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src",
+  "scripts": {
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --progress --hot --inline",
+    "test": "npm install"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.5.1",
+    "babel-loader": "^6.2.2",
+    "babel-plugin-react-transform": "^2.0.0",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "react-hot-loader": "^1.3.0",
+    "react-redux": "^4.4.0", //provider connect
+    "react-transform-hmr": "^1.0.2",
+    "redux": "^3.3.1", //create Store
+    "redux-thunk": "^1.0.3",//redux meddileware,
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.13",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7"
+  }
+}
