@@ -4,7 +4,7 @@
   "description": "An react redux with webpack hot load template project.",
   "main": "npm start",
   "scripts": {
-    "start": "node node_modules/webpack-dev-server/bin/webpack-dev-server.js --progress --hot --inline"
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --progress --hot --inline"
   },
   "author": "ypling",
   "license": "ISC",
@@ -15,6 +15,7 @@
     "babel-preset-es2015": "^6.5.0",
     "babel-preset-react": "^6.5.0",
     "file-loader": "^0.8.5",
+    "object-assign": "^4.0.1",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-redux": "^4.4.0",
