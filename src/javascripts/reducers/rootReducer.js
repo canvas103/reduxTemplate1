@@ -1,5 +1,4 @@
 import {combineReducers} from 'redux';
-import assign from 'object-assign';
 import Constants from '../Constants.js'
 
 const todo = (state, action)=> {
@@ -14,7 +13,7 @@ const todo = (state, action)=> {
             if (state.id !== action.id) {
                 return state;
             }
-            return assign({},state,{completed: !state.completed});
+            return Object.assign({},state,{completed: !state.completed});
         default :
             return state;
     }
