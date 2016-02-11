@@ -2,25 +2,26 @@
  * Created by chenghui on 2/9/2016.
  */
 import React, {Component, PropTypes} from 'react';
-import {connect} from 'react-redux';
-import actionCreators from '../actionCreators/actionCreators.js';
 
+class AddTodo extends Component{
+    constructor(props,context){
+        super(props,context)
+    }
+    render(){
+        let input;
+        return(
 
-let AddTodo = ({dispatch})=> {
-    let input;
-    return (
+            <div>
+                <input type="text" ref={node=>{input=node}}/>
+                <button onClick={()=>{this.props.onAddClick(input.value);input.value='';}}>{"Add Todo"}</button>
+                <button onClick={()=>{this.props.onTryThunkClick(input.value);input.value='';}}>try thunk</button>
+            </div>
+        );
+    }
+}
 
-        <div>
-            <input type="text" ref={node=>{input=node}}/>
-            <button onClick={()=>{
-                dispatch(actionCreators.addTodo(input.value));
-                input.value='';
-                }}
-            >
-                Add Todo
-            </button>
-        </div>
-    );
+AddTodo.propTypes = {
+    onAddClick:PropTypes.func.isRequired,
+    onTryThunkClick:PropTypes.func.isRequired
 };
-AddTodo = connect()(AddTodo);
 export default AddTodo

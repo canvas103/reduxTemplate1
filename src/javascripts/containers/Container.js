@@ -1,14 +1,12 @@
 import React, {Component, PropTypes} from 'react';
 import TodoList from '../presentationals/TodoList.js';
 import {connect} from 'react-redux';
+
 class Container extends Component {
     constructor(props, context) {
       super(props, context);
-        this.clickHandler = this.clickHandler.bind(this);
     }
-    clickHandler(){
 
-    }
     render () {
 
       return (

@@ -1,48 +1,56 @@
 import {combineReducers} from 'redux';
-import Constants from '../Constants.js'
+import {ADD_TODO,REMOVE_TODO,TOGGLE_TODO,SET_VISIBILITY_FILTER,PENDING} from '../constants/ActionTypes.js';
+import {SHOW_ALL} from '../constants/FilterTypes.js';
 
 const todo = (state, action)=> {
     switch (action.type) {
-        case Constants.ADD_TODO:
+        case ADD_TODO:
             return {
                 id: action.id,
                 text: action.text,
                 completed: false
             };
-        case Constants.TOGGLE_TODO:
+        case TOGGLE_TODO:
             if (state.id !== action.id) {
                 return state;
             }
-            return Object.assign({},state,{completed: !state.completed});
+            return Object.assign({}, state, {completed: !state.completed});
         default :
             return state;
     }
 };
-const todos = (state, action)=> {
-    state=state || [];
+const todos = (state = [], action)=> {
     switch (action.type) {
-        case Constants.ADD_TODO:
+        case ADD_TODO:
             return state.concat([todo(undefined, action)]);
-        case Constants.REMOVE_TODO:
-            return state.filter(t=> t.id!==action.id);
-        case Constants.TOGGLE_TODO:
+        case REMOVE_TODO:
+            return state.filter(t=> t.id !== action.id);
+        case TOGGLE_TODO:
             return state.map(t=> todo(t, action));
         default :
             return state;
     }
 };
-const visibilityFilter=(state,action)=>{
-    state=state || Constants.FILTER.SHOW_ALL;
-    switch (action.type){
-        case Constants.SET_VISIBILITY_FILTER:
+const visibilityFilter = (state = SHOW_ALL, action)=> {
+    switch (action.type) {
+        case SET_VISIBILITY_FILTER:
             return action.filter;
         default:
             return state;
     }
 };
+const pending = (state = false, action)=> {
+    switch (action.type) {
+        case PENDING:
+            return true;
+        default:
+            return false;
+    }
+};
 const rootReducer = combineReducers({
     //Add more reducers here
     todos,
-    visibilityFilter
+    visibilityFilter,
+    pending
 });
 export default rootReducer;

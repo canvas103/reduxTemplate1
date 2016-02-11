@@ -1,8 +1,10 @@
 import'./index.html';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TodoApp from './javascripts/containers/TodoApp.js';
+import App from './javascripts/App.js';
 import configureStore from './javascripts/store/configureStore';
 import {Provider} from 'react-redux';
-const store = configureStore({});
-ReactDOM.render(<Provider store={store}><TodoApp /></Provider>,document.getElementById('main'));
+import initialState from './javascripts/initialState.js';
+
+const store = configureStore(initialState);
+ReactDOM.render(<Provider store={store}><App /></Provider>,document.getElementById('main'));

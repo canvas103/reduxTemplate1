@@ -3,27 +3,26 @@
  */
 import React, {Component, PropTypes} from 'react';
 
-const Todo = ({
-    onClick,
-    onClick2,
-    completed,
-    text
-    })=>(
-    <li
-        onClick={onClick}
-        style={{
-            textDecoration:completed?'line-through':'none'
+class Todo extends Component {
+    constructor(props, context) {
+        super(props, context);
+    }
+
+    render() {
+        return (
+            <li
+                onClick={this.props.onClick}
+                style={{
+            textDecoration:this.props.completed?'line-through':'none'
         }}
-    >
-        {text}
-        <button onClick={onClick2}
-            >delete</button>
-    </li>
-);
-Todo.propTypes={
-    text:PropTypes.string.isRequired,
-    //onClick:PropTypes.function.isRequired,
-    //onClick2:PropTypes.function.isRequired,
-    //completed:PropTypes.boolean.isRequired
+                >
+                {this.props.children}
+            </li>
+        );
+    }
+}
+Todo.propTypes = {
+    onClick:PropTypes.func.isRequired,
+    completed:PropTypes.bool.isRequired
 };
 export default Todo;
