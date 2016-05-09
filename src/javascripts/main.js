@@ -1,4 +1,6 @@
 import'./../index.html';
+import '!style!css!sass!../stylesheets/styles.scss';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import RouterWrap from './RouterWrap.js';
