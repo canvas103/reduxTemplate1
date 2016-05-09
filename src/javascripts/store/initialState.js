@@ -1,7 +1,7 @@
 /**
  * Created by chenghui on 2/10/2016.
  */
-import {SHOW_ACTIVE} from './constants/FilterTypes.js';
+import {SHOW_ACTIVE} from './../constants/FilterTypes.js';
 
 export default {
     todos:[{

@@ -1,4 +1,5 @@
 import {combineReducers} from 'redux';
+import {routerReducer } from 'react-router-redux';
 import {ADD_TODO,REMOVE_TODO,TOGGLE_TODO,SET_VISIBILITY_FILTER,PENDING} from '../constants/ActionTypes.js';
 import {SHOW_ALL} from '../constants/FilterTypes.js';
 
@@ -51,6 +52,7 @@ const rootReducer = combineReducers({
     //Add more reducers here
     todos,
     visibilityFilter,
-    pending
+    pending,
+    routing:routerReducer
 });
 export default rootReducer;

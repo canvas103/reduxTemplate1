@@ -2,9 +2,9 @@
  * Created by chenghui on 2/9/2016.
  */
 import React, {Component} from 'react';
-import TodoList from '../presentationals/TodoList.js';
-import AddTodo from '../presentationals/AddTodo.js';
-import Footer from '../presentationals/Footer.js';
+import TodoList from '../components/todo/TodoList.js';
+import AddTodo from '../components/todo/AddTodo.js';
+import Footer from '../components/todo/Footer.js';
 import {toggleTodo,removeTodo,setVisibilityFilter,addTodo,addTodo2} from '../actionCreators/actionCreators.js';
 import {connect} from 'react-redux';
 
@@ -24,7 +24,7 @@ class TodoApp extends Component {
                           onTodoClick={this.props.onTodoClick}
                           onRemoveClick={this.props.onRemoveClick}
                     >
-                    {pending}
+                    {this.props.state.pending}
                 </TodoList>
                 <Footer state={this.props.state}
                         onFilterClick={this.props.onFilterClick}

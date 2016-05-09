@@ -2,7 +2,7 @@
  * Created by chenghui on 2/9/2016.
  */
 import React, {Component, PropTypes} from 'react';
-import {SHOW_ALL,SHOW_ACTIVE,SHOW_COMPLETED} from '../constants/FilterTypes.js';
+import {SHOW_ALL,SHOW_ACTIVE,SHOW_COMPLETED} from '../../constants/FilterTypes.js';
 import Todo from "./Todo.js";
 
 const getVisibleTodos = (todos, filter)=> {

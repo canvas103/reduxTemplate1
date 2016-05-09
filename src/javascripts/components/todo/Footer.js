@@ -3,7 +3,7 @@
  */
 import React, {Component, PropTypes} from 'react';
 import FilterLink from './FilterLink.js';
-import {SHOW_ALL,SHOW_ACTIVE,SHOW_COMPLETED} from '../constants/FilterTypes.js';
+import {SHOW_ALL,SHOW_ACTIVE,SHOW_COMPLETED} from '../../constants/FilterTypes.js';
 
 const todoCounter = (todos, filter)=> {
     switch (filter) {
